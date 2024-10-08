@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Search Bot</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+        }
+
+        nav {
+            background-color: #003366;
+            padding: 0.75rem 1.5rem; /* Increased padding for larger navbar */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1rem; /* Slightly increased font size */
+        }
+
+        nav .heading {
+            color: white;
+            font-size: 1.5rem; /* Adjusted font size */
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+
+        .user-info {
+            color: white;
+            font-size: 1rem;
+            font-weight: normal;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            height: calc(100vh - 75px); /* Adjust height based on navbar height */
+            padding: 10px;
+            gap: 10px; /* Gap between file-list and chat-container */
+        }
+
+        .file-list {
+            width: 30%;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden; /* Hide overflow to remove scrollbar */
+            margin-right: 10px;
+        }
+
+        .file-list h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .file-list ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .file-list ul li {
+            margin-bottom: 8px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        .file-list ul li:last-child {
+            border-bottom: none;
+        }
+
+        .chat-container {
+            width: 70%;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-container h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .chat-box {
+            flex: 1;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            background-color: #fafafa;
+            overflow: hidden; /* Hide overflow to remove scrollbar */
+        }
+
+        .input-group {
+            display: flex;
+            gap: 5px;
+            margin-top: 10px;
+        }
+
+        .input-group input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .input-group button {
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            background-color: #003366;
+            color: white;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .input-group button:hover {
+            background-color: #ffcc00;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="heading">Document Search Bot</div>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            {% if current_user.is_authenticated %}
+            <li class="user-info">{{ current_user.username }} ({{ current_user.role }})</li>
+            {% if current_user.role == 'Admin' %}
+                <li><a href="{{ url_for('upload') }}">Upload</a></li>
+            {% endif %}
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- File List -->
+        <div class="file-list">
+            <h3>Uploaded Files</h3>
+            <ul>
+                {% for file in files %}
+                    <li>{{ file.filename }} - Uploaded by {{ file.uploader }} on {{ file.upload_date }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <!-- Chat Container -->
+        <div class="chat-container">
+            <h3>Ask a Question</h3>
+            <div class="chat-box" id="chat-box">
+                <!-- Answers will be displayed here -->
+            </div>
+            <div class="input-group">
+                <input type="text" id="question" placeholder="Enter your question here...">
+                <button onclick="askQuestion()">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function askQuestion() {
+            const question = document.getElementById('question').value;
+            if (question.trim() === '') {
+                alert('Please enter a question.');
+                return;
+            }
+
+            // Simulating an API call to get the answer
+            const chatBox = document.getElementById('chat-box');
+            const answer = `You asked: "${question}". This is where the answer would appear.`; // Replace with actual API call
+
+            const answerDiv = document.createElement('div');
+            answerDiv.textContent = answer;
+            chatBox.appendChild(answerDiv);
+            document.getElementById('question').value = '';
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        document.getElementById('question').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault(); // Prevents newline in input field
+                askQuestion();
+            }
+        });
+    </script>
+</body>
+</html>

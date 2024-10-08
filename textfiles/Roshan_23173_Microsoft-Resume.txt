@@ -1,0 +1,112 @@
+ROSHAN KUNTULU
+Phone number:8790518545
+Email address:rosh782@gmail.com
+Linkedin Profile: linkedin.com/in/roshan-kumar-kuntulu-12125325b
+
+
+Profile
+Experienced digital engineer skilled in driving business growth through innovative solutions. Proficient in cutting-edge technologies to optimize processes and enhance user experience. Seeking a challenging role to contribute expertise and drive success in a forward-thinking organization.
+
+Work Experience
+
+09/2022 – present - Banglore, India
+
+Digital Engineer
+SONATA SOFTWARE
+
+Currently working as Digital Associate Engineer at Sonata Software Limited in Bangalore. 
+
+ Completed comprehensive training on AWS cloud platform and AWS Console.
+
+Gained hands-on experience in VPCs, RouteTables, Security Groups, NAT Gateways, and Internet Gateways.
+
+Proficient in EC2 instance creation, Inbound and Outbound rule configuration, Bastion host setup, IAM user management, Policy and Role configuration.
+
+Experienced in RDS, Auto-Scaling, Load Balancers, S3 Buckets, and Lambda functions.
+
+Proficient in Python programming and AWS Cloud Practitioner certified.
+
+Experienced in M365 products, networking (DNS, DHCP, IPs), and Windows AD.
+
+Understanding of Software Engineering principles and Agile methodology.
+
+
+Professional Experience
+Nov - Dec 2023:  KENT Project with focus on Support, M365, and ITIL training.
+
+Jun - Aug 2023: supported in Windows Server, Azure AD, and Sharepoint in CPL_Aroma_IMS_SEL Project.
+
+Jan - May 2023: Successfully completed AWS Cloud Training, gained hands-on experience in various AWS services, developed Python programming skills.
+
+Dec 2022: Studied Windows OS, basic Python programming, networking basics, Windows Server, and participated in a case-study on AWS infrastructure creation during Technical Training.
+
+Sep - Nov 2022: Acquired knowledge in Software Engineering principles, Agile methodology, HTML, JavaScript, CSS, C#, SQL basics, and Git version control during Software Engineering and Front-end Development Training.
+
+Developed and implemented digital solutions to optimize website performance and user experience.
+
+Collaborated with cross-functional teams to troubleshoot and resolve technical issues related to digital platforms.
+
+Conducted thorough analysis of data and user feedback to inform strategic decisions for digital projects.
+
+Managed and maintained digital infrastructure, ensuring scalability and security of online platforms.
+
+
+
+
+Skills
+
+AWS cloud computing
+Windows Operating System, Active directory
+Microsoft 365, Microsoft Exchange, Share point
+Networking, DNS, DHCP.
+Python, C, C# programming
+Knowledge on web development
+
+
+
+Education
+
+Mechanical Engineering | BTECH 
+CVR COLLEGE OF ENGINEERING
+CGPA:-7.9 (07/2018 – 06/2022 Hyderabad, India)
+
+        Maths, Physics, Chemistry | Intermediate
+Sri chaitanya junior college
+PERCENTAGE:- 82% (06/2016 – 05/2018 Hyderabad, India)
+
+10TH
+CAL PUBLIC SCHOOL,CBSE
+CGPA:- 9.8(06/2016 Hyderabad, India)
+
+
+Achievements
+
+   Achieved a 93% score in completing a case study in AWS
+   Certified as an entry-level Python programmer by KODEKLOUD
+   Accreditation (Technical) certification from AWS Training and Certification. 
+
+
+
+Strengths
+
+Quick learner,
+Technical skills,
+Analytical mindset,
+Communication skills,
+Team player,
+Time management.
+
+
+Hobbies
+
+Travelling
+Driving
+Photography
+video editing
+cricket
+
+Languages known:- English, Hindi, Telugu, Odiya, Kannada, German(Beginner).
+
+
+
+

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Search Bot</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url("{{ url_for('static', filename='bg2.jpg') }}") no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        nav {
+            background-color: #003366;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        nav .heading {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #f0a500;
+        }
+
+        .user-info {
+            color: white;
+            font-size: 1.1rem;
+            font-weight: normal;
+            text-align: center;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: color 0.3s;
+        }
+
+        .user-info:hover {
+            color: #f0a500;
+        }
+
+        .content {
+    text-align: center;
+    margin-top: 40px;  /* Reduced margin for a more balanced layout */
+    padding: 20px;     /* Added padding for better spacing */
+}
+
+/* Updated heading styles */
+.content h1 {
+    font-size: 3.5rem;
+    color: #004d40;
+    font-family: 'Poppins',
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+
+/* Updated paragraph styles */
+.content p {
+    font-size: 1.1rem;
+    color: #455a64;
+    font-family: 'Lora', serif;
+    line-height: 1.6;
+    margin-top: 15px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+        .content img {
+            margin-top: 20px;
+            max-width: 80%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="heading">Document Search Bot</div>
+        <ul>
+            {% if current_user.is_authenticated %}
+                <li class="user-info">{{ current_user.username }} ({{ current_user.role }})</li>
+                <li><a href="{{ url_for('ask') }}">Ask</a></li>
+                {% if current_user.role == 'Admin' %}
+                    <li><a href="{{ url_for('upload') }}">Upload</a></li>
+                {% endif %}
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            {% else %}
+                <li><a href="{{ url_for('login') }}" role="button">LOGIN</a></li>
+                <li><a href="{{ url_for('signup') }}" role="button">SIGN UP</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="content">
+        {% if current_user.is_authenticated %}
+            <h1>Welcome Back, {{ current_user.username }}!</h1>
+        {% else %}
+            <h1>Welcome to the Document Search Bot!</h1>
+            <p>Your personal assistant for document searching and management.</p>
+        {% endif %}
+        <img src="{{ url_for('static', filename='img2.jpg') }}" alt="Main Visual">
+    </div>
+
+</body>
+</html>
